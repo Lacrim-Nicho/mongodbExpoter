@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB Exporter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Esporta Dati MongoDB</h1>
+            <p class="subtitle">Connettiti al tuo cluster e scarica i dati in formato JSON</p>
+        </header>
+        
+        <div class="card">
+            <div class="input-container">
+                <label for="clusterUrl">URL Cluster MongoDB</label>
+                <input type="text" id="clusterUrl" required placeholder="mongodb+srv://username:password@cluster.mongodb.net/database">
+                <div class="hint">Inserisci l'URL completo del tuo cluster MongoDB per connetterti</div>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="downloadMongoData()" class="download-btn">
+                    <i class="fas fa-download"></i> Scarica Dati MongoDB
+                </button>
+            </div>
+        </div>
+
+        <div id="result" class="result-card">
+            <div class="result-header">
+                <i class="fas fa-info-circle"></i>
+                <span>Stato</span>
+            </div>
+            <div class="result-content">I risultati appariranno qui...</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>MongoDB Data Exporter &copy; 2025</p>
+    </footer>
+</body>
+</html> 
